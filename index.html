@@ -8,18 +8,10 @@
 <div id="swagger-ui"></div>
 <script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist/swagger-ui-bundle.js"></script>
 <script>
-    const ui = SwaggerUIBundle({
-    url: 'https://ih3q5t2rl5.execute-api.eu-central-1.amazonaws.com/dev/api-docs',
-    dom_id: '#swagger-ui',
-    presets: [SwaggerUIBundle.presets.apis],
-    layout: "BaseLayout",
-    requestInterceptor: (req) => {
-        if (!req.url.includes('/dev')) {
-            req.url = req.url.replace('execute-api.eu-central-1.amazonaws.com', 'execute-api.eu-central-1.amazonaws.com/dev');
-        }
-        return req;
-    }
-});
+const ui = SwaggerUIBundle({
+        url: 'https://ih3q5t2rl5.execute-api.eu-central-1.amazonaws.com/dev/api-docs',
+        dom_id: '#swagger-ui'
+    });
 </script>
 </body>
 </html>
